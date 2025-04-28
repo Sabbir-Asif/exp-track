@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <div class="summary">
+            <h2 id="current-month">Summary</h2>
+            <!-- <p>Month: </p> <span id="current-month">null</span> -->
+            <div class="summary-details">
+                <p>Total Income: <span id="total-income">0</span></p>
+                <p>Total Expense: <span id="total-expense">0</span></p>
+                <p>Remaining: <span id="total-remaining">0</span></p>
+            </div>
+        </div>
+
+        <div class="add-buttons">
+            <button id="add-expense-btn">Add Expense</button>
+            <button id="add-income-btn">Add Income</button>
+        </div>
+
+        <div id="popup-form" class="popup" style="display: none;">
+            <h2>Add Record</h2>
+            <input type="hidden" id="popup-type">
+            <input type="number" id="popup-amount" placeholder="Amount">
+            <select id="popup-category"></select>
+            <input type="date" id="popup-date">
+            <button id="popup-save">Save</button>
+            <button id="popup-cancel">Cancel</button>
+        </div>
+
+        <div class="filters">
+            
+            <h2 id="records">Records</h2>
+
+            <select id="filter-year">
+                <option value="">All Years</option>
+            </select>
+            <select id="filter-month">
+                <option value="">All Months</option>
+            </select>
+            <button id="apply-filters-btn">Apply Filters</button>
+        </div>
+        <table id="records-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button id="show-reports-btn">Show Reports</button>
+
+        <div id="reports-section" style="display: none;">
+            <h2>Yearly Expenses</h2>
+            <select id="report-year">
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+
+            <table id="yearly-expense-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Expense</th>
+                        <th>Total Income</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>
